@@ -18,6 +18,8 @@ services:
       
   semaphore:
     restart: unless-stopped
+    networks:
+      - network
     expose:
       - 3000
     image: semaphoreui/semaphore:latest
@@ -45,3 +47,8 @@ services:
 
     depends_on:
       - mysql # for postgres, change to: postgres
+
+networks:
+  network:
+    name: nginx-proxy-manager_default
+    external: true
