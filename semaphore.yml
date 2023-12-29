@@ -6,6 +6,8 @@ services:
     restart: unless-stopped
     image: mysql:8.0
     hostname: mysql
+    networks:
+      - network
     volumes:
       - /root/semaphore/mysql:/var/lib/mysql
     environment:
