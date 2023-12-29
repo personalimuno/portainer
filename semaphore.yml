@@ -15,10 +15,11 @@ services:
       MYSQL_PASSWORD: semaphore
     expose: 
       - 3306
+      
   semaphore:
     restart: unless-stopped
-    ports:
-      - 53000:3000
+    expose:
+      - 3000
     image: semaphoreui/semaphore:latest
     environment:
       SEMAPHORE_DB_USER: semaphore
