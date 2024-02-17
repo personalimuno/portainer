@@ -26,6 +26,6 @@
                 "container": "/var/lib/postgresql/data"
               }
             ]
-        },
+        }
     ]
 }
