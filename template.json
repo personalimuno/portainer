@@ -31,7 +31,7 @@
     },
     {
       "type": 1,
-      "name": "mongodb-replset",
+      "name": "mongodbRepl",
       "title": "MongoDB ReplicaSet",
       "description": "Open-source document-oriented database",
       "categories": ["database"],
@@ -44,15 +44,15 @@
       "volumes": [
         {
           "container": "/data/db",
-          "bind": "/stacks/mongodb-replset/data"
+          "bind": "/stacks/mongodbRepl/data"
         },
         {
           "container": "/data/configdb",
-          "bind": "/stacks/mongodb-replset/config"
+          "bind": "/stacks/mongodbRepl/config"
         },
         {
           "container": "/docker-entrypoint-initdb.d/",
-          "bind": "/stacks/mongodb-replset/custom_conf"
+          "bind": "/stacks/mongodbRepl/custom_conf"
         }
       ],
       "env": [
