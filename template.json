@@ -2,8 +2,8 @@
     "version": "2",
     "templates": [
         {
-            "type": 1,
-            "name": "PostgreSQL",
+            "type": 3,
+            "name": "Postgresql",
             "title": "PostgreSQL",
             "description": "The most advanced open-source database",
             "categories": ["database"],
@@ -27,6 +27,9 @@
                 "/stacks/postgresql/data": "/var/lib/postgresql/data"
               }
             ]
+        },
+        {
+
         }
     ]
 }
