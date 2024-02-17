@@ -1,6 +1,6 @@
 {
     "version": "2",
-    "template": [
+    "templates": [
         {
             "type": 1,
             "title": "PostgreSQL",
