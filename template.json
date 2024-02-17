@@ -3,6 +3,7 @@
     "templates": [
         {
             "type": 1,
+            "name": "PostgreSQL",
             "title": "PostgreSQL",
             "description": "The most advanced open-source database",
             "categories": ["database"],
@@ -22,7 +23,7 @@
             "ports": ["5432/tcp"],
             "volumes": [
               {
-                "container": "/var/lib/postgresql/data"
+                "/stacks/postgresql/data": "/var/lib/postgresql/data"
               }
             ]
         }
