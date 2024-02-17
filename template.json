@@ -36,7 +36,7 @@
       "categories": ["database"],
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
-      "image": "mongo:4.0",
+      "image": "mongo:6.0",
       "network": "private",
       "ports": ["27017:27017/tcp"],
       "command": "--replSet replicaSets --bind_ip_all --port 27017",
