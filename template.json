@@ -55,12 +55,12 @@
         {
           "name": "MONGO_INITDB_ROOT_USERNAME",
           "label": "Username",
-          "description": "Please do not left empty for security."
+          "description": "Please do not left empty for data security."
         },
         {
           "name": "MONGO_INITDB_ROOT_PASSWORD",
           "label": "Password",
-          "description": "Please do not left empty for security."
+          "description": "Please do not left empty for data security."
         }
       ]
     }
