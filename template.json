@@ -2,7 +2,7 @@
     "version": "2",
     "templates": [
         {
-            "type": 3,
+            "type": 1,
             "name": "Postgresql",
             "title": "PostgreSQL",
             "description": "The most advanced open-source database",
