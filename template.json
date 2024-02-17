@@ -1,35 +1,68 @@
 {
-    "version": "2",
-    "templates": [
+  "version": "2",
+  "templates": [
+    {
+        "type": 1,
+        "name": "postgresql",
+        "title": "PostgreSQL",
+        "description": "The most advanced open-source database",
+        "categories": ["database"],
+        "platform": "linux",
+        "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
+        "image": "postgres:latest",
+        "network": "private",
+        "ports": ["5432/tcp"],
+        "env": [
+          {
+            "name": "POSTGRES_USER",
+            "label": "Username"
+          },
+          {
+            "name": "POSTGRES_PASSWORD",
+            "label": "Password"
+          }
+        ],
+        "volumes": [
+          {
+            "/stacks/postgresql/data": "/var/lib/postgresql/data"
+          }
+        ]
+    },
+    {
+      "type": 1,
+      "name": "mongodb-replset",
+      "title": "MongoDB ReplicaSet",
+      "description": "Open-source document-oriented database",
+      "categories": ["database"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
+      "image": "mongo:latest",
+      "network": "private",
+      "ports": ["27017:27017/tcp"],
+      "command": "--replSet replicaSets --bind_ip_all --port 27017",
+      "volumes": [
         {
-            "type": 1,
-            "name": "Postgresql",
-            "title": "PostgreSQL",
-            "description": "The most advanced open-source database",
-            "categories": ["database"],
-            "platform": "linux",
-            "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
-            "image": "postgres:latest",
-            "network": "private",
-            "env": [
-              {
-                "name": "POSTGRES_USER",
-                "label": "Superuser"
-              },
-              {
-                "name": "POSTGRES_PASSWORD",
-                "label": "Superuser password"
-              }
-            ],
-            "ports": ["5432/tcp"],
-            "volumes": [
-              {
-                "/stacks/postgresql/data": "/var/lib/postgresql/data"
-              }
-            ]
+          "/stacks/mongodb-replset/data": "/data/db"
         },
         {
-
+          "/stacks/mongodb-replset/config": "/data/configdb"
+        },
+        {
+          "/stacks/mongodb-replset/custom_conf": "/docker-entrypoint-initdb.d/"
         }
-    ]
+      ],
+      "env": [
+        {
+          "name": "MONGO_INITDB_ROOT_USERNAME",
+          "label": "Username",
+          "description": "Please do not left empty for security."
+        },
+        {
+          "name": "MONGO_INITDB_ROOT_PASSWORD",
+          "label": "Password",
+          "description": "Please do not left empty for security."
+        }
+      ]
+    }
+  ]
 }
