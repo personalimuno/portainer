@@ -43,13 +43,16 @@
       "command": "--replSet replicaSets --bind_ip_all --port 27017",
       "volumes": [
         {
-          "/stacks/mongodb-replset/data": "/data/db"
+          "container": "/data/db",
+          "bind": "/stacks/mongodb-replset/data"
         },
         {
-          "/stacks/mongodb-replset/config": "/data/configdb"
+          "container": "/data/configdb",
+          "bind": "/stacks/mongodb-replset/config"
         },
         {
-          "/stacks/mongodb-replset/custom_conf": "/docker-entrypoint-initdb.d/"
+          "container": "/docker-entrypoint-initdb.d/",
+          "bind": "/stacks/mongodb-replset/custom_conf"
         }
       ],
       "env": [
