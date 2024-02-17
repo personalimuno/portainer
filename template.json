@@ -24,7 +24,8 @@
         ],
         "volumes": [
           {
-            "/stacks/postgresql/data": "/var/lib/postgresql/data"
+            "container": "/var/lib/postgresql/data",
+            "bind": "/stacks/postgresql/data"
           }
         ]
     },
