@@ -12,5 +12,5 @@ services:
       - REPLICASETS=${REPLICASETS}
     command: ["--replSet", "${REPLICASETS}", "--bind_ip_all",  "--keyFile", "/keyFile"]
     volumes:
-      - /stacks/mongodb-7.0/data:/data/db
-      - /stacks/mongodb-7.0/config:/data/configdb
+      - /stacks/mongodb-7.0-replset/data:/data/db
+      - /stacks/mongodb-7.0-replset/config:/data/configdb
