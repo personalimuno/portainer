@@ -2,6 +2,34 @@
   "version": "2",
   "templates": [
     {
+      "type": 1,
+      "name": "postgresql",
+      "title": "PostgreSQL",
+      "description": "The most advanced open-source database",
+      "categories": ["database"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
+      "image": "postgres:latest",
+      "network": "private",
+      "ports": ["5432/tcp"],
+      "env": [
+        {
+          "name": "POSTGRES_USER",
+          "label": "Username"
+        },
+        {
+          "name": "POSTGRES_PASSWORD",
+          "label": "Password"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/var/lib/postgresql/data",
+          "bind": "/stacks/postgresql/data"
+        }
+      ]
+    },
+    {
         "type": 1,
         "name": "postgresql",
         "title": "PostgreSQL",
