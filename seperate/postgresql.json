@@ -9,7 +9,7 @@
       "categories": ["database"],
       "platform": "linux",
       "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/postgres.png",
-      "image": "postgres:latest",
+      "image": "postgres:15",
       "network": "private",
       "ports": ["5432/tcp"],
       "env": [
