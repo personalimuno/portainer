@@ -10,7 +10,7 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
       - REPLICASETS=${REPLICASETS}
-    command: ["--replSet", "${REPLICASETS}", "--bind_ip_all",  "--keyFile", "/keyFile"]
+    command: ["--replSet", "${REPLICASETS}", "--bind_ip_all",  "--keyFile", "/keyfile"]
     volumes:
       - /stacks/mongodb-7.0-replset/data:/data/db
       - /stacks/mongodb-7.0-replset/config:/data/configdb
