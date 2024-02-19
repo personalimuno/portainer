@@ -95,7 +95,7 @@
         }
       ],
       "repository": {
-        "stackfile": "separate/mongodb-7.0/docker-compose.yml",
+        "stackfile": "seperate/mongodb-70.yml",
         "url": "https://github.com/personalimuno/portainer"
       }
     }
