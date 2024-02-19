@@ -1,0 +1,73 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "type": 1,
+      "title": "MongoDB 7.0 ReplicaSets",
+      "description": "Open-source document-oriented database",
+      "categories": "database",
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
+      "image": "personalimuno/mongodb:7.0",
+      "ports": [
+        "27017/tcp"
+      ],
+      "env": [
+        {
+          "name": "MONGO_INITDB_ROOT_USERNAME",
+          "label": "Root Username",
+          "description": "Recommended to not left it empty for security reason, otherwise leave it blank"
+        },
+        {
+          "name": "MONGO_INITDB_ROOT_PASSWORD",
+          "label": "Root Password",
+          "description": "Recommended to not left it empty for security reason, otherwise leave it blank"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/data/db",
+          "bind": "/stacks/mongodb-7.0/data"
+        },
+        {
+          "container": "/data/configdb",
+          "bind": "/stacks/mongodb-7.0/data"
+        }
+      ]
+    },
+    {
+      "type": 1,
+      "title": "MongoDB 4.2.12 ReplicaSets",
+      "description": "Open-source document-oriented database",
+      "categories": "database",
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
+      "image": "personalimuno/mongodb:4.2.12",
+      "ports": [
+        "27017/tcp"
+      ],
+      "env": [
+        {
+          "name": "MONGO_INITDB_ROOT_USERNAME",
+          "label": "Root Username",
+          "description": "Recommended to not left it empty for security reason, otherwise leave it blank"
+        },
+        {
+          "name": "MONGO_INITDB_ROOT_PASSWORD",
+          "label": "Root Password",
+          "description": "Recommended to not left it empty for security reason, otherwise leave it blank"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/data/db",
+          "bind": "/stacks/mongodb-4.2.12/data"
+        },
+        {
+          "container": "/data/configdb",
+          "bind": "/stacks/mongodb-4.2.12/data"
+        }
+      ]
+    }
+  ]
+}
