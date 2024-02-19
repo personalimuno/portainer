@@ -1,0 +1,16 @@
+---
+
+services:
+  mongodb:
+    image: personalimuno/mongodb:7.0
+    restart: unless-stopped
+    ports:
+      - 27017:27017/tcp
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_INITDB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
+      - REPLICASETS=${REPLICASETS}
+    command: ["--replSet", "${REPLICASETS}", "--bind_ip_all",  "--keyFile", "/data/configdb/keyFile"]
+    volumes:
+      - /stacks/mongodb-7.0/data:/data/db
+      - /stacks/mongodb-7.0/config:/data/configdb
